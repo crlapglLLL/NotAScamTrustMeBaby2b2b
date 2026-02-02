@@ -1,246 +1,5 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>ThisIsNotASpamTrustMeBaby</title>
-
-
-  
-  <style>
-    @import url('https://fonts.cdnfonts.com/css/gidole');
-
-    body {
-      background-color: #4a148c;
-      color: white;
-      text-align: center;
-      font-family: 'Gidole', Arial, sans-serif;
-      margin: 0;
-      padding: 80px 20px;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    h1 {
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-
-    button {
-      padding: 15px 40px;
-      margin: 15px 10px;
-      font-size: 18px;
-      font-family: 'Gidole', Arial, sans-serif;
-      cursor: pointer;
-      background-color: #00bcd4;
-      color: white;
-      border: none;
-      border-radius: 40px;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
-      display: inline-block;
-    }
-
-    button:active {
-      opacity: 0.5;
-      transform: translateY(2px);
-      box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
-    }
-
-    button:hover {
-      opacity: 0.9;
-      box-shadow: 0 6px 20px rgba(0, 188, 212, 0.6);
-      transform: translateY(-2px);
-    }
-
-    img {
-      margin-top: 20px;
-      margin-bottom: 30px;
-      max-width: 300px;
-      border-radius: 10px;
-    }
-
-    div[id^="risultato"], div[id="schermata-iniziale"] {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-     /* Animazione fade-in quando appaiono le schermate */
-.fadeIn {
-  animation: fadeInAnimation 0.8s ease-in;
-}
-
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Particelle di sfondo */
-.particle {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: float 6s infinite ease-in-out;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Coriandoli per i finali */
-.confetti {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  pointer-events: none;
-  animation: fall 3s linear;
-  z-index: 999;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-  </style>
-</head>
-<body>
-<body>  
-<audio id="backgroundMusic" loop>
-    <source src="MUSICA.mp3" type="audio/mp3">
-</audio>
-  <audio id="suono1b2">
-    <source src="VOCELEI.mp3" type="audio/mp3">
-</audio>
-
-<audio id="suono2b1">
-    <source src="BIMBO.mp3" type="audio/mp3">
-</audio>
-<audio id="suono1b1">
-    <source src="VOCELUI.mp3" type="audio/mp3">
-</audio>
-
-  <!-- SCHERMATA INIZIALE -->
-  <div id="schermata-iniziale" class="fadeIn" class="fadeIn">
-    <h1>HEY TU, so che non mi conosci, sono qui per chiederti... vuoi essere la mia Valentina 2026?</h1>
-    <img src="SCONOSCIUTO.png" alt="Immagine iniziale">
-    <br>
-    <button onclick="scelta1()">Sì certo, non ci penso due volte</button>
-    <button onclick="scelta2()">Aspetta un attimo... ma chi sei? Mi vuoi scammare?</button>
-  </div>
-
-  <!-- RISULTATO PULSANTE 1 -->
-  <div id="risultato-1" style="display: none;" class="fadeIn">
-    <h1>Wow... ok... non me lo aspettavo, non mi sono preparato a questo! Beh allora...</h1>
-    <img src="ERRORE.png" alt="Immagine scelta 1">
-    <br>
-    <button onclick="scelta1a()">* incontriamoci *</button>
-    <button onclick="scelta1b()">ti prendevo per il culo e per in giro</button>
-  </div>
-
-  <!-- RISULTATO PULSANTE 2 -->
-  <div id="risultato-2" style="display: none;" class="fadeIn">
-    <h1>Hai perfettamente ragione ad avere dubbi... quindi ti svelerò chi sono</h1>
-    <img src="MIRIVELO.png" alt="Immagine scelta 2">
-    <br>
-    <button onclick="scelta2a()">Ok si, sono curiosa</button>
-    <button onclick="scelta2b()">No guarda, non mi interessa!</button>
-  </div>
-
-  <!-- RISULTATO PULSANTE 1A -->
-  <div id="risultato-1a" style="display: none;" class="fadeIn">
-    <h1>oddio si... certo.. e se ti dicessi che sono sotto casa tua??</h1>
-    <img src="DAVVERO.png" alt="Immagine scelta 1a">
-    <br>
-    <button onclick="scelta1a1()">ma è inquietante</button>
-    <button onclick="scelta1a2()">no, non ci sei</button>
-  </div>
-
-  <!-- RISULTATO PULSANTE 1B -->
-  <div id="risultato-1b" style="display: none;" class="fadeIn">
-    <h1>ma...</h1>
-    <img src="MORTO.png" alt="Immagine scelta 1b">
-    <br>
-    <button onclick="scelta1b1()">hahahahha godo</button>
-    <button onclick="scelta1b2()">premi qui per farti convincere....</button>
-  </div>
-
-  <!-- RISULTATO PULSANTE 2A -->
-  <div id="risultato-2a" style="display: none;" class="fadeIn">
-    <h1>TAA DAAAN... ero io, il tuo Scricciolooo</h1>
-    <img src="IO.png" alt="Immagine scelta 2a">
-    <br>
-    <button onclick="scelta2a1()">si lo sapevo hihihi</button>
-    <button onclick="scelta2a2()">wow, me l'hai proprio fatta stavolta</button>
-  </div>
-
-  <!-- RISULTATO PULSANTE 2B -->
-  <div id="risultato-2b" style="display: none;" class="fadeIn">
-    <h1>nooooo... ora mi butto...</h1>
-    <img src="MIBUTTO.png" alt="Immagine scelta 2b">
-    <br>
-    <button onclick="scelta2b1()">ESAGERATA</button>
-    <button onclick="scelta2b2()">No, davvero non mi interessa</button>
-  </div>
-
-  <!-- RISULTATI FINALI LIVELLO 3 -->
-  <div id="risultato-1a1" style="display: none;">
-    <h1>FORSE SI...se fossi uno pazzo sconosciuto, ma hey.. SONO IOOOOO IL TUO SCRICCIOLOOOO 💕</h1>
-    <img src="MINISO.jpg" alt="Finale 1a1">
-  </div>
-
-  <div id="risultato-1a2" style="display: none;">
-    <h1>Eh no, purtroppo, ma vorrei tanto, arriverà il nostro futuro insieme nella nostra casetta</h1>
-    <img src="CASA.png" alt="Finale 1a2">
-  </div>
-
-  <div id="risultato-1b1" style="display: none;">
-    <h1>hey... non è divertente, dammi subito un bacino perchè mi hai fatto prendere collera così...</h1>
-    <img src="MINACCIA.png" alt="Finale 1b1">
-  </div>
-
-  <div id="risultato-1b2" style="display: none;">
-    <h1>non te lo aspettavi eh....</h1>
-    <img src="NUDO.png" alt="Finale 1b2">
-  </div>
-
-  <div id="risultato-2a1" style="display: none;">
-    <h1>Detective Conan tu... sicura di voler essere la mia Valentina? A tuo rischio e pericolo hahahaha, sappi però che per me sei la fidanzata migliore che si possa desiderare, TI AMO IMMENSAMENTE 💝</h1>
-    <img src="BACIOLAUREA.png" alt="Finale 2a1">
-  </div>
-
-  <div id="risultato-2a2" style="display: none;">
-    <h1>Non è vero lo so hihihi, ma grazie 👉🏻👈🏻, sei proprio il mio amore senza fine, TI AMO 4 e 70</h1>
-    <img src="BACIOFISICA.webp" alt="Finale 2a2">
-  </div>
-
-  <div id="risultato-2b1" style="display: none;">
-    <h1> Beh vuol dire che mi ha riconsciuta... Ciao Ammoree Mijiooo ❤️</h1>
-    <img src="BACIOSPA (1).png" alt="Finale 2b1">
-  </div>
-
-  <div id="risultato-2b2" style="display: none;">
-    <h1>💔</h1>
-    <img src="CRATOS.gif" alt="gif animata">
-  </div>
-
-  <script>
-    const music = document.getElementById('backgroundMusic');
+<script>
+const music = document.getElementById('backgroundMusic');
 let musicStarted = false;
 
 function startMusic() {
@@ -249,170 +8,172 @@ function startMusic() {
         musicStarted = true;
     }
 }
-    let currentScreen = "schermata-iniziale";
 
-    function mostraSchermata(nuovaSchermata) {
-      document.getElementById(currentScreen).style.display = "none";
-      document.getElementById(nuovaSchermata).style.display = "block";
-      currentScreen = nuovaSchermata;
-      history.pushState({screen: nuovaSchermata}, "", "");
-      createParticles();
-  
-  // Coriandoli solo per i finali
-  // Coriandoli solo per i finali (con ritardo)
-if (nuovaSchermata === "risultato-2a" || 
-    nuovaSchermata === "risultato-1a1" || 
-    nuovaSchermata === "risultato-1b2" || 
-    nuovaSchermata === "risultato-2a2" || 
-    nuovaSchermata === "risultato-2a1" || 
-    nuovaSchermata === "risultato-2b1") {
-  setTimeout(() => {
-    createConfetti();
-  }, 500);  // Aspetta 500ms prima di far partire i coriandoli
+let currentScreen = "schermata-iniziale";
+
+function mostraSchermata(nuovaSchermata) {
+    document.getElementById(currentScreen).style.display = "none";
+    document.getElementById(nuovaSchermata).style.display = "block";
+    currentScreen = nuovaSchermata;
+    history.pushState({screen: nuovaSchermata}, "", "");
+    createParticles();
+    
+    // Coriandoli solo per i finali (con ritardo)
+    if (nuovaSchermata === "risultato-2a" || 
+        nuovaSchermata === "risultato-1a1" || 
+        nuovaSchermata === "risultato-1b2" || 
+        nuovaSchermata === "risultato-2a2" || 
+        nuovaSchermata === "risultato-2a1" || 
+        nuovaSchermata === "risultato-2b1") {
+        setTimeout(() => {
+            createConfetti();
+        }, 500);
+    }
 }
 
 // Crea particelle di sfondo
 function createParticles() {
-  for (let i = 0; i < 15; i++) {
-    setTimeout(() => {
-      let particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 3 + 's';
-      particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-      document.body.appendChild(particle);
-      
-      setTimeout(() => particle.remove(), 10000);
-    }, i * 100);
-  }
+    for (let i = 0; i < 15; i++) {
+        setTimeout(() => {
+            let particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 3 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            document.body.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 10000);
+        }, i * 100);
+    }
 }
 
 // Crea coriandoli per i finali
 function createConfetti() {
-  const colors = ['#ff6b9d', '#c44569', '#f8b500', '#00d2ff', '#3742fa', '#2ed573'];
-  
-  for (let i = 0; i < 50; i++) {
-    setTimeout(() => {
-      let confetti = document.createElement('div');
-      confetti.className = 'confetti';
-      confetti.style.left = Math.random() * 100 + '%';
-      confetti.style.top = '-10px';
-      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      confetti.style.width = (Math.random() * 10 + 5) + 'px';
-      confetti.style.height = (Math.random() * 10 + 5) + 'px';
-      confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-      confetti.style.animationDelay = (Math.random() * 0.5) + 's';
-      document.body.appendChild(confetti);
-      
-      setTimeout(() => confetti.remove(), 4000);
-    }, i * 30);
-  }
+    const colors = ['#ff6b9d', '#c44569', '#f8b500', '#00d2ff', '#3742fa', '#2ed573'];
+    
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+            let confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-10px';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.width = (Math.random() * 10 + 5) + 'px';
+            confetti.style.height = (Math.random() * 10 + 5) + 'px';
+            confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            confetti.style.animationDelay = (Math.random() * 0.5) + 's';
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 4000);
+        }, i * 30);
+    }
 }
-    // LIVELLO 1
-    function scelta1() {
-      startMusic();
-      mostraSchermata("risultato-1");
-    }
 
-    function scelta2() {
-      startMusic();
-      mostraSchermata("risultato-2");
-    }
+// LIVELLO 1
+function scelta1() {
+    startMusic();
+    mostraSchermata("risultato-1");
+}
 
-    // LIVELLO 2 - Da risultato-1
-    function scelta1a() {
-      mostraSchermata("risultato-1a");
-    }
+function scelta2() {
+    startMusic();
+    mostraSchermata("risultato-2");
+}
 
-    function scelta1b() {
-      mostraSchermata("risultato-1b");
-    }
+// LIVELLO 2 - Da risultato-1
+function scelta1a() {
+    mostraSchermata("risultato-1a");
+}
 
-    // LIVELLO 2 - Da risultato-2
-    function scelta2a() {
-      mostraSchermata("risultato-2a");
-    }
+function scelta1b() {
+    mostraSchermata("risultato-1b");
+}
 
-    function scelta2b() {
-      mostraSchermata("risultato-2b");
-    }
+// LIVELLO 2 - Da risultato-2
+function scelta2a() {
+    mostraSchermata("risultato-2a");
+}
 
-    // LIVELLO 3 - Da risultato-1a
-    function scelta1a1() {
-      mostraSchermata("risultato-1a1");
-    }
+function scelta2b() {
+    mostraSchermata("risultato-2b");
+}
 
-    function scelta1a2() {
-      mostraSchermata("risultato-1a2");
-    }
+// LIVELLO 3 - Da risultato-1a
+function scelta1a1() {
+    mostraSchermata("risultato-1a1");
+}
 
-    // LIVELLO 3 - Da risultato-1b
-    function scelta1b1() {
-       let suono = document.getElementById('suono1b1');
+function scelta1a2() {
+    mostraSchermata("risultato-1a2");
+}
+
+// LIVELLO 3 - Da risultato-1b
+function scelta1b1() {
+    let suono = document.getElementById('suono1b1');
     suono.volume = 0.4;
     suono.play();
     
     setTimeout(() => {
         suono.pause();
         suono.currentTime = 0;
-    }, 5000); // 5000 = 5 secondi
-      
-      mostraSchermata("risultato-1b1");
-    }
+    }, 5000);
+    
+    mostraSchermata("risultato-1b1");
+}
 
-    function scelta1b2() {
-      document.getElementById('suono1b2').play();
-       setTimeout(() => {
+function scelta1b2() {
+    let suono = document.getElementById('suono1b2');
+    suono.play();
+    
+    setTimeout(() => {
         suono.pause();
         suono.currentTime = 0; 
-    }, 5000); // 5 secondi
-      
-      mostraSchermata("risultato-1b2");
-    }
+    }, 5000);
+    
+    mostraSchermata("risultato-1b2");
+}
 
-    // LIVELLO 3 - Da risultato-2a
-    function scelta2a1() {
-      mostraSchermata("risultato-2a1");
-    }
+// LIVELLO 3 - Da risultato-2a
+function scelta2a1() {
+    mostraSchermata("risultato-2a1");
+}
 
-    function scelta2a2() {
-      mostraSchermata("risultato-2a2");
-    }
+function scelta2a2() {
+    mostraSchermata("risultato-2a2");
+}
 
-    // LIVELLO 3 - Da risultato-2b
-    function scelta2b1() {
-      document.getElementById('suono2b1').play();
-       setTimeout(() => {
+// LIVELLO 3 - Da risultato-2b
+function scelta2b1() {
+    let suono = document.getElementById('suono2b1');
+    suono.play();
+    
+    setTimeout(() => {
         suono.pause();
         suono.currentTime = 0; 
-    }, 5000); // 5 secondi
-      
-      mostraSchermata("risultato-2b1");
-    }
+    }, 5000);
+    
+    mostraSchermata("risultato-2b1");
+}
 
-    function scelta2b2() {
-      mostraSchermata("risultato-2b2");
-    }
+function scelta2b2() {
+    mostraSchermata("risultato-2b2");
+}
 
-    // Gestisce il pulsante "Indietro" del browser
-    window.addEventListener("popstate", function(event) {
-      if (event.state && event.state.screen) {
+// Gestisce il pulsante "Indietro" del browser
+window.addEventListener("popstate", function(event) {
+    if (event.state && event.state.screen) {
         document.getElementById(currentScreen).style.display = "none";
         document.getElementById(event.state.screen).style.display = "block";
         currentScreen = event.state.screen;
-      } else {
+    } else {
         document.getElementById(currentScreen).style.display = "none";
         document.getElementById("schermata-iniziale").style.display = "block";
         currentScreen = "schermata-iniziale";
-      }
-    });
+    }
+});
 
-    // Imposta lo stato iniziale
-    history.replaceState({screen: "schermata-iniziale"}, "", "");
-    createParticles();
-  </script>
-
-</body>
-</html>
-
+// Imposta lo stato iniziale
+history.replaceState({screen: "schermata-iniziale"}, "", "");
+createParticles();
+</script>
