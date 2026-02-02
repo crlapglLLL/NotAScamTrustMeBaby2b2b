@@ -270,12 +270,6 @@ if (nuovaSchermata === "risultato-2a" ||
     createConfetti();
   }, 500);  // Aspetta 500ms prima di far partire i coriandoli
 }
-    }
-    function playSound() {
-  let sound = document.getElementById('clickSound');
-  sound.currentTime = 0;
-  sound.play();
-}
 
 // Crea particelle di sfondo
 function createParticles() {
@@ -355,11 +349,14 @@ function createConfetti() {
 
     // LIVELLO 3 - Da risultato-1b
     function scelta1b1() {
-      document.getElementById('suono1b1').play();
-       setTimeout(() => {
+       let suono = document.getElementById('suono1b1');
+    suono.volume = 0.4;
+    suono.play();
+    
+    setTimeout(() => {
         suono.pause();
-        suono.currentTime = 0; 
-    }, 4000); // 5 secondi
+        suono.currentTime = 0;
+    }, 5000); // 5000 = 5 secondi
       
       mostraSchermata("risultato-1b1");
     }
