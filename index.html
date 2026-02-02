@@ -131,7 +131,9 @@
 <audio id="suono2b1">
     <source src="BIMBO.mp3" type="audio/mp3">
 </audio>
-
+<audio id="suono1b1">
+    <source src="VOCELUI.mp3" type="audio/mp3">
+</audio>
 
   <!-- SCHERMATA INIZIALE -->
   <div id="schermata-iniziale" class="fadeIn" class="fadeIn">
@@ -353,11 +355,22 @@ function createConfetti() {
 
     // LIVELLO 3 - Da risultato-1b
     function scelta1b1() {
+      document.getElementById('suono1b1').play();
+       setTimeout(() => {
+        suono.pause();
+        suono.currentTime = 0; 
+    }, 5000); // 5 secondi
+      
       mostraSchermata("risultato-1b1");
     }
 
     function scelta1b2() {
       document.getElementById('suono1b2').play();
+       setTimeout(() => {
+        suono.pause();
+        suono.currentTime = 0; 
+    }, 5000); // 5 secondi
+      
       mostraSchermata("risultato-1b2");
     }
 
@@ -373,6 +386,11 @@ function createConfetti() {
     // LIVELLO 3 - Da risultato-2b
     function scelta2b1() {
       document.getElementById('suono2b1').play();
+       setTimeout(() => {
+        suono.pause();
+        suono.currentTime = 0; 
+    }, 5000); // 5 secondi
+      
       mostraSchermata("risultato-2b1");
     }
 
