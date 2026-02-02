@@ -119,7 +119,10 @@
 
   </style>
 </head>
-
+<body>
+<audio id="backgroundMusic" loop>
+    <source src="MUSICA.mp3" type="audio/mp3">
+</audio>
 <body>
 
   <!-- SCHERMATA INIZIALE -->
@@ -227,6 +230,15 @@
   </div>
 
   <script>
+    const music = document.getElementById('backgroundMusic');
+let musicStarted = false;
+
+function startMusic() {
+    if (!musicStarted) {
+        music.play();
+        musicStarted = true;
+    }
+}
     let currentScreen = "schermata-iniziale";
 
     function mostraSchermata(nuovaSchermata) {
@@ -295,10 +307,12 @@ function createConfetti() {
 }
     // LIVELLO 1
     function scelta1() {
+      startMusic();
       mostraSchermata("risultato-1");
     }
 
     function scelta2() {
+      startMusic();
       mostraSchermata("risultato-2");
     }
 
