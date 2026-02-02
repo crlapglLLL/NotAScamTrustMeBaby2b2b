@@ -120,10 +120,18 @@
   </style>
 </head>
 <body>
+<body>  
 <audio id="backgroundMusic" loop>
     <source src="MUSICA.mp3" type="audio/mp3">
 </audio>
-<body>
+  <audio id="suono1b2">
+    <source src="VOCELEI.mp3" type="audio/mp3">
+</audio>
+
+<audio id="suono2b1">
+    <source src="BIMBO.mp3" type="audio/mp3">
+</audio>
+
 
   <!-- SCHERMATA INIZIALE -->
   <div id="schermata-iniziale" class="fadeIn" class="fadeIn">
@@ -349,6 +357,7 @@ function createConfetti() {
     }
 
     function scelta1b2() {
+      document.getElementById('suono1b2').play();
       mostraSchermata("risultato-1b2");
     }
 
@@ -363,6 +372,7 @@ function createConfetti() {
 
     // LIVELLO 3 - Da risultato-2b
     function scelta2b1() {
+      document.getElementById('suono2b1').play();
       mostraSchermata("risultato-2b1");
     }
 
